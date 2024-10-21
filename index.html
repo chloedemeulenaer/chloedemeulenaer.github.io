@@ -22,6 +22,7 @@
 			<nav id="nav">
 				<img style = "margin-left:3vw;" src="images/LSE_logo_blanc_trans.png" />
 				<ul class="container">
+					<li><a href="#misc">Misc</a></li>
 					<li><a href="#teaching">Teaching</a></li>
 					<li><a href="#research">Research</a></li>
 					<li><a href="#about">About</a></li>
@@ -29,6 +30,8 @@
 				</ul>
 			</nav>
 	
+		
+
         <!-- Home -->
 			<article id="about" class="wrapper style1">
 				<div class="container">
@@ -52,7 +55,8 @@
 								
 							<p>I am particularly interested in exploring the disconnect between redistributive policies that find public support, and those deemed optimal by economic models.</p>
 							<p>
-                            <a href="#portfolio" class="button scrolly">CV download</a>
+							<a href="assets/cv.pdf" download class="button">CV download</a>
+
 						</p>
 						</div>
 					</div>
@@ -66,27 +70,22 @@
 						<h2>Research</h2>
 					</header>
                     <h3>work in progress</h3>
-					<p>Tax the rich — and lazy: Attitudes towards the inheritance tax </p>
-					<!-- <a href="#portfolio" class="button small">WP Aug 24</a> <a href="#portfolio" class="button small">slides Aug 24</a>  --> 
-					<abstract>I use new survey data collected in France to study attitudes towards the inheritance tax —a
-						tax consistently found to be unpopular— and patterns of persuasion. I find that although the
-						inheritance tax is indeed very unpopular, there is comparatively high support for redistributive
-						forms of taxation: the capital income tax is quite popular, and so is an inheritance tax targeting
-						wealthy parents who have themselves inherited (i.e. "twice inherited" wealth). Both pieces
-						of evidence suggest that there is substantial demand for redistribution, but that respondents
-						do not see the current French inheritance tax as an adequate way to achieve it. I explore the
-						plasticity of those preferences to two types or arguments: the first one making the point that
-						the wealth distribution is very unequal, the second defending the right of parents to transfer
-						the fruits of their hard work to their children. While the first argument gathers less support
-						among respondents than the second, it significantly increases support for the inheritance tax,
-						as well as for the capital income tax. Counter-intuitively, the second argument also increases
-						support for the capital income tax, and if anything, seems to weakly increase support for the
-						inheritance tax. I provide two interpretations for that last finding: resistance — the backfiring
-						of arguments made by political foes —, and the fact that the quote, by celebrating hard work,
-						may indirectly increase support for taxing low effort wealth and income.</abstract>
-					<p>Perceptions of tax evasion and tax enforcement, with <a href="https://www.danreck.com/">Daniel Reck</a></p> 
-					<p>Peer effects and insurance choice quality, with <a href="https://personal.lse.ac.uk/spinnewi/">Johannes Spinnewijn</a>, <a href="https://www.benjaminhandel.com/">Ben Handel</a>, and <a href="https://www.jkolstad.org/">Jon Kolstad</a></p>
-					<p>Comparing universes of redistributive arguments, with <a href="https://sites.google.com/view/morten-stostad/home-and-economics">Morten Nyborg Støstad</a></p>
+					<p>
+						Tax the rich — and lazy: Attitudes towards the inheritance tax
+						<button class="collapsible">abstract</button>
+						<div class="content">
+							<abstract>I use new survey data collected in France to study attitudes towards the inheritance tax — a tax consistently found to be unpopular — and patterns of persuasion. I find that although the inheritance tax is indeed very unpopular, there is comparatively high support for redistributive forms of taxation: the capital income tax is quite popular, and so is an inheritance tax targeting wealthy parents who have themselves inherited (i.e. "twice inherited" wealth). Both pieces of evidence suggest that there is substantial demand for redistribution, but that respondents do not see the current French inheritance tax as an adequate way to achieve it. I explore the plasticity of those preferences to two types of arguments: the first one making the point that the wealth distribution is very unequal, the second defending the right of parents to transfer the fruits of their hard work to their children. While the first argument gathers less support among respondents than the second, it significantly increases support for the inheritance tax, as well as for the capital income tax. Counter-intuitively, the second argument also increases support for the capital income tax, and if anything, seems to weakly increase support for the inheritance tax. I provide two interpretations for that last finding: resistance — the backfiring of arguments made by political foes —, and the fact that the quote, by celebrating hard work, may indirectly increase support for taxing low effort wealth and income.</abstract>
+						</div>
+					</p>
+					<p>
+						Perceptions of tax evasion and tax enforcement, with <a href="https://www.danreck.com/">Daniel Reck</a>
+					</p>
+					<p>
+						Peer effects and insurance choice quality, with <a href="https://personal.lse.ac.uk/spinnewi/">Johannes Spinnewijn</a>, <a href="https://www.benjaminhandel.com/">Ben Handel</a>, and <a href="https://www.jkolstad.org/">Jon Kolstad</a>
+					</p>
+					<p>
+						Comparing universes of redistributive arguments, with <a href="https://sites.google.com/view/morten-stostad/home-and-economics">Morten Nyborg Støstad</a>
+					</p>
 					<h3>policy writing</h3>
 					<p>
 					<a href="https://www.revuepolitique.be/linsoluble-masculinite-du-pouvoir-cest-le-temps-des-quotas/">Insoluble masculinité du pouvoir: C'est le temps des quotas</a>, in <a href="https://www.revuepolitique.be/">La Revue Politique</a>, June 2018
@@ -134,6 +133,23 @@
 					
 				</div>
 			</article>
+		
+		<!-- Misc -->
+		<article id="misc" class="wrapper style1">
+			<div class="container">
+				<header>
+					<h2>Miscellaneous</h2>
+				</header>
+				<p>
+					An artisan dataset: all the films I've ever seen, rated, with rich metadata (about 600 films, 15 variables) 
+				</p>
+				<p>
+					<a href="assets/cv.pdf" download class="button">formatted data</a>
+					<a href="assets/cv.pdf" download class="button">raw data</a>
+					<a href="assets/cv.pdf" download class="button">readme</a>
+				</p>
+			</div>	
+		</article>
 
 		<!-- Contact -->
 			<article id="contact" class="wrapper style4">
@@ -155,6 +171,15 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				const collapsibleButton = document.querySelector('.collapsible');
+				const contentDiv = document.querySelector('.content');
+		
+				collapsibleButton.addEventListener('click', function() {
+					// Toggle content visibility and class for animation
+					contentDiv.classList.toggle('show');
+				});
+			</script>
 
 	</body>
 </html>
