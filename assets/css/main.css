@@ -31,6 +31,14 @@
     font-weight: 700;
     font-style: normal;
 }
+@font-face {
+    font-family: 'NewSpirit';
+    src: url('/assets/fonts/NewSpiritTRIAL-Heavy.otf') format('opentype'),
+         url('/assets/fonts/NewSpiritTRIAL-Heavy.woff') format('woff'),
+         url('/assets/fonts/NewSpiritTRIAL-Heavy.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
 
 @font-face {
     font-family: 'Inconsolata';
@@ -246,7 +254,7 @@ input, select, textarea {
 	h1, h2, h3, h4, h5, h6 {
 		font-family: Helvetica;
 		color: var(--textcolor);
-		font-weight: 700;
+		font-weight: 600;
 	}
 
 	h1 {
