@@ -188,9 +188,9 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		font-family: GTF Riposte TRIAL, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-family: New Spirit TRIAL, Platypi, GTF Riposte TRIAL, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		color: var(--textcolor);
-		font-weight: 700;
+		font-weight: 600;
 	}
 
 	h1 {
@@ -245,6 +245,7 @@ input, select, textarea {
 		align-items: flex-start;
 		margin: 0 auto;
 		max-width: calc(100% - 50px);
+		width: 50vw;
 	}
 
 	#nav .container {
