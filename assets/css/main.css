@@ -180,7 +180,7 @@ input, select, textarea {
 	}
 
 	papertitle {
-		font-weight: 500;
+		font-weight: 400;
 	}
 	
 	yearuni {
@@ -1597,7 +1597,7 @@ input, select, textarea {
 	}
 
 		ul li {
-			font-weight: 400; 
+			font-weight: 500; 
 			padding-left: 0.5em;
 			display: inline-block;
 		}
