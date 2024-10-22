@@ -1518,6 +1518,7 @@ input, select, textarea {
 		-webkit-transition: background-color .2s ease-in-out;
 		-ms-transition: background-color .2s ease-in-out;
 		padding: .5em .9em .4em .9em; /* top left bottom right */
+		line-height: 1; 
 		margin-left: .2em;
 		display: inline;
 		white-space: nowrap;
@@ -1534,9 +1535,6 @@ input, select, textarea {
 		font-size: .9em;
 	}
 
-		input[type="button"]:hover,
-		input[type="submit"]:hover,
-		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
 			background-color: var(--accentcolor1);
@@ -1544,9 +1542,6 @@ input, select, textarea {
 			width: auto;
 		}
 
-		input[type="button"]:active,
-		input[type="submit"]:active,
-		input[type="reset"]:active,
 		button:active,
 		.button:active {
 			background-color: var(--textcolor);
@@ -1554,18 +1549,16 @@ input, select, textarea {
 			width: auto;
 		}
 
-		input[type="button"].small,
-		input[type="submit"].small,
-		input[type="reset"].small,
 		button.small,
 		.button.small {
 			height: 17px; 
-			line-height:0;
-			border-radius: 10px;
+			line-height: 0;
+			border-radius: 100px;
 			margin-left: .3em;
 			padding: .4em .7em .4em .7em; /* top gauche bottom droite */
 			font-size: .6em;
 			letter-spacing: .025em;
+			vertical-align: middle;
 			width: auto;
 		}
 
