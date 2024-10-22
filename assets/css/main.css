@@ -175,11 +175,12 @@ input, select, textarea {
 	email {
 		font-family: 'Inconsolata', sans-serif;
 		font-size: .9em;
-		font-weight: 500;
+		font-weight: 600;
 		color: var(--textcolor);
 	}
 
-	papertitle {
+	lect {
+		font-size: .8em;
 		font-weight: 400;
 	}
 	
@@ -1509,10 +1510,7 @@ input, select, textarea {
 		
 /* Buttons */
 
-	input[type="button"],
-	input[type="submit"],
-	input[type="reset"],
-	button,
+	button,	
 	.button {
 		-moz-transition: background-color .2s ease-in-out;
 		-webkit-transition: background-color .2s ease-in-out;
@@ -1531,6 +1529,7 @@ input, select, textarea {
 		cursor: pointer;
 		border-radius: 1000px;
 		overflow: hidden;
+		vertical-align: middle;
 		background-color: var(--textcolor);
 		font-size: .9em;
 	}
@@ -1538,15 +1537,12 @@ input, select, textarea {
 		button:hover,
 		.button:hover {
 			background-color: var(--accentcolor1);
-			color: #fff !important;
-			width: auto;
 		}
 
 		button:active,
 		.button:active {
 			background-color: var(--textcolor);
 			top: 1px;
-			width: auto;
 		}
 
 		button.small,
@@ -1556,10 +1552,23 @@ input, select, textarea {
 			border-radius: 100px;
 			margin-left: .3em;
 			padding: .4em .7em .4em .7em; /* top gauche bottom droite */
-			font-size: .6em;
+			font-size: .7em;
 			letter-spacing: .025em;
-			vertical-align: middle;
 			width: auto;
+		}
+
+		.button.hollow {
+			margin-left: -.2em;
+			margin-right: .1em;
+			vertical-align: .15em;
+			color: var(--textcolor) !important; /* Text color */
+    		border: 1px solid var(--textcolor); /* Thin border */
+		    background-color: white; /* White background */
+			cursor: default;
+			
+		}
+		.button.hollow.small {
+			padding: .2em .5em .2em .5em;
 		}
 
         .collapsible {
