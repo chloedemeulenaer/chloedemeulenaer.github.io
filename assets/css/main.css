@@ -9,59 +9,59 @@
 
 @font-face {
     font-family: 'NewSpirit';
-    src: url('/assets/fonts/NewSpiritTRIAL-Regular.otf') format('opentype'),
-         url('/assets/fonts/NewSpiritTRIAL-Regular.woff') format('woff'),
-         url('/assets/fonts/NewSpiritTRIAL-Regular.woff2') format('woff2');
+    src: url('../fonts/NewSpiritTRIAL-Regular.otf') format('opentype'),
+         url('../fonts/NewSpiritTRIAL-Regular.woff') format('woff'),
+         url('../fonts/NewSpiritTRIAL-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'NewSpirit';
-    src: url('/assets/fonts/NewSpiritTRIAL-SemiBold.otf') format('opentype'),
-         url('/assets/fonts/NewSpiritTRIAL-SemiBold.woff') format('woff'),
-         url('/assets/fonts/NewSpiritTRIAL-SemiBold.woff2') format('woff2');
+    src: url('../fonts/NewSpiritTRIAL-SemiBold.otf') format('opentype'),
+         url('../fonts/NewSpiritTRIAL-SemiBold.woff') format('woff'),
+         url('../fonts/NewSpiritTRIAL-SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
 }
 @font-face {
     font-family: 'NewSpirit';
-    src: url('/assets/fonts/NewSpiritTRIAL-Bold.otf') format('opentype'),
-         url('/assets/fonts/NewSpiritTRIAL-Bold.woff') format('woff'),
-         url('/assets/fonts/NewSpiritTRIAL-Bold.woff2') format('woff2');
+    src: url('../fonts/NewSpiritTRIAL-Bold.otf') format('opentype'),
+         url('../fonts/NewSpiritTRIAL-Bold.woff') format('woff'),
+         url('../fonts/NewSpiritTRIAL-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: 'NewSpirit';
-    src: url('/assets/fonts/NewSpiritTRIAL-Heavy.otf') format('opentype'),
-         url('/assets/fonts/NewSpiritTRIAL-Heavy.woff') format('woff'),
-         url('/assets/fonts/NewSpiritTRIAL-Heavy.woff2') format('woff2');
+    src: url('../fonts/NewSpiritTRIAL-Heavy.otf') format('opentype'),
+         url('../fonts/NewSpiritTRIAL-Heavy.woff') format('woff'),
+         url('../fonts/NewSpiritTRIAL-Heavy.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Inconsolata';
-    src: url('/assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf') format('truetype');
+    src: url('../fonts/Inconsolata-VariableFont_wdth,wght.ttf') format('truetype');
     font-weight: 100 900;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Helvetica';
-    src: url('/assets/fonts/Helvetica-Light-05.ttf') format('truetype');
+    src: url('../fonts/Helvetica-Light-05.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: 'Helvetica';
-    src: url('/assets/fonts/Helvetica-01.ttf') format('truetype');
+    src: url('../fonts/Helvetica-01.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Helvetica';
-    src: url('/assets/fonts/Helvetica-Bold-02.ttf') format('truetype');
+    src: url('../fonts/Helvetica-Bold-02.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
@@ -168,7 +168,7 @@ input, select, textarea {
 		font-family: 'Helvetica', sans-serif; /*'New Spirit TRIAL'*/
 		line-height: 1.5em;
 		color: var(--textcolor);
-		font-weight: 300;
+		font-weight: 400;
 		font-size: medium;
 	}
 
@@ -194,7 +194,7 @@ input, select, textarea {
 	abstract {
 		display: block;
 		font-size: 9pt;
-		font-weight: 300;
+		font-weight: 400;
 		color: var(--textcolor);
 		line-height: 1.5em;
 		padding: 0em calc(2em + 4vw) 0em 0em; 
@@ -256,9 +256,11 @@ input, select, textarea {
 	}
 
 	h3 {
-		font-size: x-large;
-		letter-spacing: 0em;
-		margin: 1.3em 0 .8em 0;
+		font-family: 'Inconsolata';
+		font-size: 1.25em;
+		font-weight: 800;
+		letter-spacing: .01em;
+		margin: .5em 0 .6em 0;
 	}
 
 	br.clear {
@@ -1711,7 +1713,7 @@ input, select, textarea {
 		position: fixed;
 		left: 0;
 		top: 0;
-		letter-spacing: -0.025em;
+		letter-spacing: -0.0em;
 		width: 100%;
 		z-index: 10000;
 		cursor: default;
@@ -1742,7 +1744,7 @@ input, select, textarea {
 			color: #fff;
 			text-decoration: none;
 			outline: 0;
-			font-weight: 300;
+			font-weight: 400;
 			color: #fff;
 			height: inherit;
 			line-height: inherit;
