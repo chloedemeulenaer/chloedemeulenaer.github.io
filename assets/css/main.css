@@ -260,11 +260,11 @@ input, select, textarea {
 	}
 
 	h3 {
-		font-family: 'Inconsolata';
-		font-size: 1.25em;
-		font-weight: 800;
+		font-family: 'NewSpirit', Platypi, GTF Riposte TRIAL, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-size: 1.35em;
+		font-weight: 600;
 		letter-spacing: .01em;
-		margin: .5em 0 .6em 0;
+		margin: .7em 0 .8em 0;
 	}
 
 	br.clear {
@@ -1553,12 +1553,12 @@ input, select, textarea {
 
 		button.small,
 		.button.small {
-			font-size: 9pt;
+			font-size: 8.5pt;
 			height: 17px; 
 			line-height: 0;
 			border-radius: 100px;
 			margin-left: .3em;
-			padding: .4em .7em .4em .7em; /* top gauche bottom droite */
+			padding: .4em .7em .3em .7em; /* top gauche bottom droite */
 			letter-spacing: .025em;
 			width: auto;
 		}
@@ -1574,7 +1574,7 @@ input, select, textarea {
 			
 		}
 		.button.hollow.small {
-			padding: .2em .5em .2em .5em;
+			padding: .4em .5em .2em .5em;
 		}
 
         .collapsible {
@@ -1882,7 +1882,7 @@ input, select, textarea {
 			}
 			h3 {
 				font-size: 1.4em;
-				margin: 0 0 0.8em 0;
+				margin: 0.6em 0 0.8em 0;
 			}
 			abstract {
 				font-size: .85em;
@@ -1907,13 +1907,17 @@ input, select, textarea {
 			}
 		
 		/* Images IN SMALL */
+		.image {
+			text-align: center;
+		  }
 
 			.image img {
-				display: block;
+				display: inline-block;
+				margin: 0 2em 0em 10;
 				width: 300px;
 				height: 300px;
-				max-width: 110%;
-				max-height: 160%;
+				max-width: 102%;
+				max-height: 140%;
 				object-fit: cover;
 				object-position: 0 27%;
 			}
