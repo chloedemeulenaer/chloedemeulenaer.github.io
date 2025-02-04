@@ -207,6 +207,7 @@ input, select, textarea {
 		left: 100%;
 		transform: translateX(0%);
 		white-space: nowrap;
+		letter-spacing: 0em;
 		opacity: 0;
 		transition: opacity 0.5s;
 	  }
