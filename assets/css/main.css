@@ -93,6 +93,7 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	text-align: left;
 	font-size: 100%;
+	color: inherit;
 	font: inherit;
 	vertical-align: baseline;}
 
@@ -175,10 +176,45 @@ input, select, textarea {
 
 	email {
 		font-family: 'Inconsolata', sans-serif;
-		font-size: .9em;
+		font-size: .99em;
 		font-weight: 600;
 		color: var(--textcolor);
 	}
+
+	phon {
+		font-family: 'Helvetica', sans-serif;
+		font-size: .9em;
+		font-weight: 400;
+		letter-spacing: .04em;
+		color: var(--textcolor);
+	}
+
+	.phonetic {
+		display: inline-block;
+		position: relative;
+	  }
+	
+	  .phonetic .tooltip {
+		visibility: hidden;
+		background-color: var(--textcolor);
+		color: white;
+		text-align: left;
+		font-size: .9em;
+		padding: 0px 10px 0px 10px;
+		border-radius: 0px;
+		position: absolute;
+		bottom: -100%;
+		left: 100%;
+		transform: translateX(0%);
+		white-space: nowrap;
+		opacity: 0;
+		transition: opacity 0.5s;
+	  }
+	
+	  .phonetic:hover .tooltip {
+		visibility: visible;
+		opacity: .9;
+	  }
 
 	lect {
 		display: block; 
@@ -225,7 +261,7 @@ input, select, textarea {
 
 	b, strong {
 		font-weight: 600;
-		color: var(--textcolor);
+		color: inherit;
 	}
 
 	i, em {
