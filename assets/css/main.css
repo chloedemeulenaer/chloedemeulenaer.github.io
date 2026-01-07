@@ -1591,7 +1591,6 @@ input, select, textarea {
 			margin-left: .3em;
 			margin-bottom: 0px;
 			padding: .4em .7em .4em .7em; /* top gauche bottom droite */
-			letter-spacing: .025em;
 			width: auto;
 			display: inline-flex;
   			align-items: center;
