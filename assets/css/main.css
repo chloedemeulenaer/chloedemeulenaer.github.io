@@ -1560,7 +1560,6 @@ input, select, textarea {
 		white-space: nowrap;
 		width: auto;
 		transition: background-color .2s ease-in-out;
-		display: inline;
 		color: #fff !important;
 		font-weight: 400;
 		border: 0;
@@ -1587,7 +1586,7 @@ input, select, textarea {
 		.button.small {
 			font-size: 8pt;
 			line-height: 1;
-			border-radius: 25px;
+			border-radius: 20px;
 			margin-left: .3em;
 			margin-bottom: 0px;
 			padding: .4em .7em .4em .7em; /* top gauche bottom droite */
@@ -1612,9 +1611,8 @@ input, select, textarea {
 
 		/* Collapsible abstract buttons*/
         .button.small.collapsible {
-		display: inline-flex;
 		position: relative;
-		padding-left: 1.7em; /* only what’s different */
+		padding-left: 1.7em; 
 		}
 
 		button.small.collapsible::before {
@@ -1624,7 +1622,7 @@ input, select, textarea {
 		top: 47%;
 		transform: translateY(-50%);
 		transition: transform 0.2s ease;
-		font-size: 7pt;
+		/*font-size: 7pt;*/
 		}
 
 		button.small.collapsible.active::before {
