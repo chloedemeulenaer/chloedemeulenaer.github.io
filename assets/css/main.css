@@ -168,7 +168,6 @@ input, select, textarea {
 		font-weight: 400;
 		font-size: medium;
 	}
-
 	jmpapertitle {
 		font-size: 15pt;
 		font-weight: 500;
@@ -178,7 +177,20 @@ input, select, textarea {
 		font-size: 14pt;
 		font-weight: 500;
 	}
-
+	lect {
+		display: block; 
+		font-size: .8em;
+		line-height: 1.6;
+		margin: 0 0 2px 0; 
+		font-weight: 400;
+	}
+	coauth {
+		display: block; 
+		font-size: .8em;
+		line-height: 1.6;
+		margin: 0 0 4px 0; 
+		font-weight: 400;
+	}
 	email {
 		font-family: 'Inconsolata', sans-serif;
 		font-size: .99em;
@@ -221,22 +233,6 @@ input, select, textarea {
 		visibility: visible;
 		opacity: .9;
 	  }
-
-	lect {
-		display: block; 
-		font-size: .8em;
-		line-height: 1.6;
-		margin: 0 0 2px 0; 
-		font-weight: 400;
-	}
-
-	coauth {
-		display: block; 
-		font-size: .8em;
-		line-height: 1.6;
-		margin: 0 0 4px 0; 
-		font-weight: 400;
-	}
 	
 	yearuni {
 		font-family: 'Inconsolata', sans-serif;
