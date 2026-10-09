@@ -91,12 +91,11 @@
 						<jmpapertitle>
 							What do policies do? Beliefs and support for economic policies
 						</jmpapertitle>
-						<coauth>(working paper on request)
+						<coauth>(paper coming soon)
 						</coauth>
 					</p>	
 					<p>
-						<abstract>When people disagree on economic policy, is it because they differ in their values, or in their beliefs about what those policies do? Using a large survey of over 7,000 French respondents, I measure beliefs about the impact of 29 economic reforms, along with a rich array of attitudes, preferences, and demographics. Participants favour reforms that they believe benefit them, and minimum wage workers; the strongest predictor of support, however, is the reform’s perceived impact on economic growth. Policy impact beliefs explain 62% of the explained variation in support for economic policies, more than a set of attitudes that the literature has found to be robust predictors of support for redistribution. Differences in policy impact beliefs represent 44% of the explained partisan gap, and 93% of the explained preference for predistributive over redistributive reforms. Participants’ beliefs are more pessimistic than economists’; providing research-based information does not significantly correct those misperceptions, but does increase support for progressive reforms. This project identifies policy impact beliefs as a key, underexplored determinant of public support for economic policies.
-						</abstract>
+						<abstract id="jmp-abstract"></abstract>
 					</p>
 					<header>
 						<h2>Working papers</h2>
@@ -228,9 +227,8 @@
 		</article>
 		-->
 		<!-- Contact -->
-			<article id="contact" class="wrapper style4">
-				
-			</article>
+		<article id="contact" class="wrapper style4">
+		</article>
 
 		<!-- Script to copy email address -->
 		<script>
@@ -240,7 +238,12 @@
 				}
 		</script>
 
-		<!-- Scripts  -->
+		<script>
+		fetch('assets/abstractjmp.txt')
+		.then(r => r.text())
+		.then(t => document.getElementById('jmp-abstract').textContent = t);
+		</script>
+
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.scrolly.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
