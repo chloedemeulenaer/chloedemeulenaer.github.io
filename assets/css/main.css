@@ -179,6 +179,7 @@ input, select, textarea {
 	}
 	lect {
 		display: block; 
+		font-family: 'NewSpirit', sans-serif;
 		font-size: .8em;
 		line-height: 1.6;
 		margin: 0 0 2px 0; 
