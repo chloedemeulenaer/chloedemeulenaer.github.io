@@ -179,11 +179,14 @@ input, select, textarea {
 	}
 	lect {
 		display: block; 
-		font-family: 'NewSpirit', sans-serif;
 		font-size: .8em;
 		line-height: 1.6;
 		margin: 0 0 2px 0; 
 		font-weight: 400;
+	}
+	newbold {
+		font-family: 'NewSpirit', sans-serif;
+		font-weight: 500;
 	}
 	coauth {
 		display: block; 
