@@ -23,7 +23,7 @@
 			<nav id="nav">
 				<img style = "margin-left:3vw;" src="images/LSE_logo_blanc_trans.png" />
 				<ul class="container">
-					<!-- <li><a href="#misc">Misc</a></li> -->
+					<!-- <li><a href="#misc">misc</a></li> -->
 					<li><a href="#teaching">teaching</a></li>
 					<li><a href="#research">research</a></li>
 					<li><a href="#about">about</a></li>
@@ -32,7 +32,6 @@
 			</nav>
 	
 		
-
         <!-- Home -->
 			<article id="about" class="wrapper style1">
 				<div class="container">
@@ -213,27 +212,59 @@
 				</div>
 			</article>
 		
-		<!-- Misc 
-		<article id="misc" class="wrapper style1">
-			<div class="container">
-				<header>
-					<h2>Miscellaneous</h2>
-				</header>
-				<p>
-					I love cinema, and lists; accordingly, here is an artisan dataset containing all the films I've ever seen until 31 December 2025, rated, with metadata (about 600 films, 15 variables) 
-				</p>
-				<p>
-					<a href="assets/cv.pdf" download class="button">formatted spreadhseet</a>
-					<a href="assets/cv.pdf" download class="button">raw data</a>
-					<a href="assets/cv.pdf" download class="button">readme</a>
-				</p>
-			</div>	
-		</article>
-		-->
+			
+			<!-- Misc 
+			<article id="misc" class="wrapper style1">
+				<div class="container">
+					<header>
+						<h2>Miscellaneous</h2>
+					</header>
+					<p>
+						I love cinema, and lists; accordingly, here is a list of every film I've ever watched up to 31 December 2025 (N=720), with metadata, and a rating out of 5. You can have a look at a few thematic top 10. You can browse the formatted file or download the raw data. You can also use the widget below to display my favourite films matching some criteria. 
+					</p>
+					<p class="filmwidget-sentence">
+						Display my top 5 films made between
+							<span class="button small hollow filmwidget-input-pill">
+							<input type="text" id="film-year-start" inputmode="numeric" pattern="[0-9]*" maxlength="4" aria-label="Start year">
+						</span>
+						and
+						<span class="button small hollow filmwidget-input-pill">
+							<input type="text" id="film-year-end" inputmode="numeric" pattern="[0-9]*" maxlength="4" aria-label="End year">
+						</span>
+						from
+						<span class="button small hollow filmwidget-pill">
+							<select id="film-country" aria-label="Country">
+								<option value="">any country</option>
+							</select>
+						</span>
+						from
+						<span class="button small hollow filmwidget-pill">
+							<select id="film-continent" aria-label="Continent">
+								<option value="">any region</option>
+							</select>
+						</span>
+						made by a
+						<span class="button small hollow filmwidget-pill">
+							<select id="film-gender" aria-label="Gender">
+								<option value="">any gender</option>
+							</select>
+						</span>
+						director
+						<a class="button small" id="film-go">show top</a>
+					</p>
+ 
+					<div id="film-output">
+						<p class="filmwidget-hint">[top]</p>
+					</div>
+
+				</div>
+			</article>
+ -->
+
 		<!-- Contact -->
 		<article id="contact" class="wrapper style4">
 		</article>
-
+ 
 		<!-- Script to copy email address -->
 		<script>
 			function copyText() {			 
@@ -241,13 +272,107 @@
 						("c.de-meulenaer@lse.ac.uk");
 				}
 		</script>
-
+ 
 		<script>
 		fetch('assets/abstractjmp.txt')
 		.then(r => r.text())
 		.then(t => document.getElementById('jmp-abstract').textContent = t);
 		</script>
-
+ 
+		<!-- Film widget: loads the film archive (CSV) and wires up the filter -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+		<script>
+		let FILM_DATA = null;
+ 
+		function splitCountries(raw) {
+			return [...new Set(
+				raw.split(/[,/]/).map(s => s.trim()).filter(Boolean)
+			)];
+		}
+ 
+		Papa.parse('assets/films_public.csv', {
+			download: true,
+			header: true,
+			dynamicTyping: true,
+			complete: function(results) {
+				const films = results.data
+					.filter(row => row.title && row.rating != null)
+					.map(row => ({
+						title: row.title,
+						director: row.director,
+						year: row.year,
+						decade: Math.floor(row.year / 10) * 10,
+						countries: splitCountries(row.country),
+						rating: row.rating,
+						reco: row.reco
+					}));
+ 
+				const countries = [...new Set(films.flatMap(f => f.countries))].sort();
+				const decades = [...new Set(films.map(f => f.decade))].sort((a, b) => a - b);
+ 
+				FILM_DATA = { films, countries, decades };
+ 
+				const countrySelect = document.getElementById('film-country');
+				countries.forEach(c => {
+					const opt = document.createElement('option');
+					opt.value = c;
+					opt.textContent = c;
+					countrySelect.appendChild(opt);
+				});
+ 
+				const decadeSelect = document.getElementById('film-decade');
+				decades.forEach(d => {
+					const opt = document.createElement('option');
+					opt.value = d;
+					opt.textContent = d + 's';
+					decadeSelect.appendChild(opt);
+				});
+			}
+		});
+ 
+		function filmStarString(rating) {
+			const full = Math.round(rating);
+			return '★'.repeat(full) + '☆'.repeat(5 - full);
+		}
+ 
+		function renderFilmResults(results) {
+			const out = document.getElementById('film-output');
+			if (results.length === 0) {
+				out.innerHTML = '<p class="filmwidget-empty">Nothing matches both filters just yet &mdash; try a different decade, or leave one filter on "Any".</p>';
+				return;
+			}
+			const items = results.map((f, i) => `
+				<li>
+					<span class="filmwidget-rank">${i + 1}.</span>
+					<span class="filmwidget-title">${f.title}</span>
+					<span class="filmwidget-stars">${filmStarString(f.rating)}</span>
+					<span class="filmwidget-meta">${f.director}, ${f.year}</span>
+				</li>
+			`).join('');
+			out.innerHTML = `<ol class="filmwidget-results">${items}</ol>`;
+		}
+ 
+		document.getElementById('film-go').addEventListener('click', () => {
+			if (!FILM_DATA) return;
+			const country = document.getElementById('film-country').value;
+			const decade = document.getElementById('film-decade').value;
+ 
+			let matches = FILM_DATA.films.filter(f => {
+				const countryOk = !country || f.countries.includes(country);
+				const decadeOk = !decade || f.decade === parseInt(decade, 10);
+				return countryOk && decadeOk;
+			});
+ 
+			matches.sort((a, b) => {
+				if (b.rating !== a.rating) return b.rating - a.rating;
+				if (b.reco !== a.reco) return b.reco - a.reco;
+				return a.title.localeCompare(b.title);
+			});
+ 
+			renderFilmResults(matches.slice(0, 5));
+		});
+		</script>
+ 
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.scrolly.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
@@ -263,7 +388,7 @@
 			button.addEventListener('click', function() {
 		// Rotate triangle
       	button.classList.toggle('active');
-
+ 
       	// Toggle abstract visibility
       	contentDivs[index].classList.toggle('show');
 			});
