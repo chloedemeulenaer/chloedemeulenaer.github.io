@@ -118,8 +118,7 @@
 						</coauth>
 						<button class="button small collapsible">ABSTRACT</button>
 						<div class="content">
-							<abstract>I use new survey data from France to explore attitudes towards the inheritance tax and demand for redistribution. Although the inheritance tax is very unpopular, respondents show significant support for redistributive forms of taxation, namely for taxing capital income and the bequests of parents who have themselves inherited. I also find that a large share of the variation in support for the inheritance tax is explained by whether participants believe that taxes mostly enhance fairness or harm the economy. This suggests that some respondents' apparently low demand for redistribution may stem from their lack of trust in the power of taxes to effectively redistribute. I then analyze how these preferences shift when exposed to two arguments: one highlighting wealth inequality, the other defending parents' right to bequeath their hard-earned savings. The inequality argument increases support for the inheritance and capital income taxes. Surprisingly, the second argument also increases support for the capital income tax and mildly increases support for the inheritance tax. I interpret this last finding as evidence of backfiring, echoing strong political polarization on the topic of the inheritance tax.
-							</abstract>
+							<abstract id="inh-abstract"></abstract>
 						</div>
 					</p>
 					
@@ -139,8 +138,7 @@
 						</coauth>
 						<button class="button small collapsible">ABSTRACT</button>
 						<div class="content">
-							<abstract>When policies rely on individual choice, who reaps the gains? We study how choice environments shape the quality of health insurance choices in the Netherlands. Individuals choose a deductible annually: many pick a low deductible, despite substantial potential savings from a higher one. We establish that workplaces, neighbourhoods and insurance providers causally affect these choices. The effects are substantial even in contexts that do not directly involve insurance decisions: moving to a firm or neighbourhood where high-deductible take-up is 10 percentage points higher increases individual take-up by approximately 1.5 percentage points. Across all three environments, effects are concentrated among predictably healthy individuals, who end up making better decisions as a result. More educated individuals both encounter better environments and respond more strongly to them, contributing to the education gap in choice quality. Our simulations explain between 39% and 78% of the gap, primarily through differences in responsiveness.
-							</abstract>
+							<abstract id="envir-abstract"></abstract>
 						</div>
 					</p>
 					<p>
@@ -290,6 +288,16 @@
 		fetch('assets/abstractjmp.txt')
 		.then(r => r.text())
 		.then(t => document.getElementById('jmp-abstract').textContent = t);
+		</script>
+		<script>
+		fetch('assets/abstractenvir.txt')
+		.then(r => r.text())
+		.then(t => document.getElementById('envir-abstract').textContent = t);
+		</script>
+		<script>
+		fetch('assets/abstractinh.txt')
+		.then(r => r.text())
+		.then(t => document.getElementById('inh-abstract').textContent = t);
 		</script>
  
 		<!-- Film widget: loads the film archive (CSV) and wires up the filter -->
